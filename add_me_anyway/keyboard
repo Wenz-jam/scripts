@@ -1,0 +1,14 @@
+#!/bin/fish
+
+set touchpad_id 'AT Translated Set 2 keyboard'
+
+set touchpad_status (xinput list-props $touchpad_id | grep "Device Enabled" | awk '{print $NF}')
+
+if test $touchpad_status -eq 1
+    echo "Disabling keyboard..."
+    xinput --disable $touchpad_id
+else
+    echo "Enabling keyboard..."
+    xinput --enable $touchpad_id
+end
+
