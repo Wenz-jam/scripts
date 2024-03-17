@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+microsoft-edge-stable $@ &>/dev/null
