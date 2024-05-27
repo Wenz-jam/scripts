@@ -1,0 +1,14 @@
+[Unit]
+Description=OCR backend for ZUFE login page captcha
+After=network.target
+
+[Service]
+User=wenz
+Group=wenz
+WorkingDirectory=/home/wenz/.local/share/zufe_ocr
+ExecStart=/home/wenz/.local/share/zufe_ocr/backend.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
